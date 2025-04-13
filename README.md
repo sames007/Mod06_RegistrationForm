@@ -29,18 +29,5 @@ A JavaFX-based registration form with live field validation and a modern user in
 
 ---
 ### Code Structure
-mod06-registration-form/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── edu/farmingdale/mod06_registrationform/
-│   │   │       ├── RegistrationApp.java
-│   │   │       └── RegistrationController.java
-│   │   └── resources/
-│   │       └── edu/farmingdale/mod06_registrationform/
-│   │           ├── registration.fxml
-│   │           └── styling/
-│   │               └── registration.css
-├── .gitignore
-└── README.md
+![image](https://github.com/user-attachments/assets/94da6eb0-7257-4e77-9432-2b8ddd5de5a6)
 
