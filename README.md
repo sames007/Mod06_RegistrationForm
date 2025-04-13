@@ -31,3 +31,17 @@ A JavaFX-based registration form with live field validation and a modern user in
 ### Code Structure
 ![image](https://github.com/user-attachments/assets/94da6eb0-7257-4e77-9432-2b8ddd5de5a6)
 
+- RegistrationApp.java:
+  - Main entry point for launching the JavaFX application. Loads the FXML layout and applies CSS styling.
+
+- RegistrationController.java:
+  - Manages form interactions and field validations using regular expressions.
+
+- FXML File:
+  - Defines the UI components and layout of the registration form.
+    
+- CSS File:
+  - Provides custom styling for a polished and modern look.
+
+
+
