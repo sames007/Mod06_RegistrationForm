@@ -8,14 +8,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.geometry.Pos;
+
 import java.util.function.Consumer;
 import java.util.regex.Pattern;
 
 /**
  * Controller for the Registration Form.
  *
- * <p>Handles all field validations and navigates to a confirmation screen
- * when the user successfully registers.</p>
+ * <p>Handles all field validations live as the user types, and navigates
+ * to a confirmation screen when the user successfully registers.</p>
  *
  * <ul>
  *   <li>First/Last Name: 2–25 letters</li>
@@ -25,8 +26,7 @@ import java.util.regex.Pattern;
  * </ul>
  *
  * @author Saim
- * @version 1.0
- * @see javafx.fxml.FXML
+ * @version 1.1
  */
 public class RegistrationController {
 
@@ -61,18 +61,23 @@ public class RegistrationController {
     private boolean isZipValid       = false;
 
     /**
-     * Initializes the controller: sets up focus-lost listeners on each field
-     * to perform validation and enable the Add button when all are valid.
+     * Initializes the controller: sets up live listeners on each field
+     * to perform validation on every keystroke and enable the Add button
+     * when all are valid.
      */
     @FXML
     public void initialize() {
+        // disable button until validations pass
+        addButton.setDisable(true);
+
+        // live validation on text change
         setupValidation(firstNameField, firstNameStatus, NAME_PATTERN,  "2–25 letters", v -> isFirstNameValid = v);
         setupValidation(lastNameField,  lastNameStatus,  NAME_PATTERN,  "2–25 letters", v -> isLastNameValid  = v);
         setupValidation(emailField,     emailStatus,     EMAIL_PATTERN, "user@farmingdale.edu", v -> isEmailValid     = v);
         setupValidation(dobField,       dobStatus,       DOB_PATTERN,   "MM/DD/YYYY",          v -> isDobValid       = v);
         setupValidation(zipField,       zipStatus,       ZIP_PATTERN,   "5 digits",            v -> isZipValid       = v);
 
-        // When clicked, if everything is valid, show confirmation
+        // on click, if everything is valid, show confirmation
         addButton.setOnAction(e -> {
             if (allValid()) {
                 showConfirmation();
@@ -81,7 +86,7 @@ public class RegistrationController {
     }
 
     /**
-     * Attaches a focus-lost listener to validate the field and update its status label.
+     * Attaches a listener to the field's textProperty to validate on each keystroke.
      *
      * @param field       the TextField to validate
      * @param statusLabel the Label to show ✓ or error text
@@ -95,13 +100,11 @@ public class RegistrationController {
                                  String hint,
                                  Consumer<Boolean> setter)
     {
-        field.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
-            if (!isNowFocused) {
-                boolean valid = pattern.matcher(field.getText()).matches();
-                setter.accept(valid);
-                updateStatus(statusLabel, valid, hint);
-                addButton.setDisable(!allValid());
-            }
+        field.textProperty().addListener((obs, oldText, newText) -> {
+            boolean valid = pattern.matcher(newText).matches();
+            setter.accept(valid);
+            updateStatus(statusLabel, valid, hint);
+            addButton.setDisable(!allValid());
         });
     }
 

@@ -8,50 +8,36 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" prefHeight="383" prefWidth="517" styleClass="root grid-pane" vgap="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.farmingdale.mod06_registrationform.RegistrationController">
+<GridPane alignment="center" hgap="10" vgap="10" prefWidth="517" prefHeight="383" styleClass="root grid-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.farmingdale.mod06_registrationform.RegistrationController">
     <padding>
-        <Insets bottom="20" left="20" right="20" top="20" />
+        <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
-    <Label alignment="CENTER" maxWidth="Infinity" styleClass="form-title" text="Registrations" GridPane.columnSpan="3" GridPane.rowIndex="1">
-        <GridPane.margin>
-            <Insets />
-        </GridPane.margin>
-      <opaqueInsets>
-         <Insets />
-      </opaqueInsets>
-      <padding>
-         <Insets bottom="20.0" right="10.0" />
-      </padding>
+    <Label text="Registrations" styleClass="form-title" alignment="CENTER" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnSpan="3">
+        <padding><Insets bottom="20" right="10"/></padding>
     </Label>
-    <Label text="First Name:" GridPane.rowIndex="2" />
-    <TextField fx:id="firstNameField" promptText="Enter First Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-    <Label fx:id="firstNameStatus" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-    <Label text="Last Name:" GridPane.rowIndex="3" />
-    <TextField fx:id="lastNameField" promptText="Enter Last Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-    <Label fx:id="lastNameStatus" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-    <Label text="Email:" GridPane.rowIndex="4" />
-    <TextField fx:id="emailField" promptText="user@farmingdale.edu" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-    <Label fx:id="emailStatus" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-    <Label text="Date of Birth (MM/DD/YYYY):" GridPane.rowIndex="5" />
-    <TextField fx:id="dobField" promptText="MM/DD/YYYY" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-    <Label fx:id="dobStatus" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-    <Label text="Zip Code:" GridPane.rowIndex="6" />
-    <TextField fx:id="zipField" promptText="Enter Zip Code" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-    <Label fx:id="zipStatus" GridPane.columnIndex="2" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-    <Button fx:id="addButton" disable="true" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
+    <Label text="First Name:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="firstNameField" promptText="Enter First Name" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Label fx:id="firstNameStatus" GridPane.rowIndex="2" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+    <Label text="Last Name:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="lastNameField" promptText="Enter Last Name" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Label fx:id="lastNameStatus" GridPane.rowIndex="3" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+    <Label text="Email:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="emailField" promptText="user@farmingdale.edu" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <Label fx:id="emailStatus" GridPane.rowIndex="4" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+    <Label text="Date of Birth (MM/DD/YYYY):" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="dobField" promptText="MM/DD/YYYY" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <Label fx:id="dobStatus" GridPane.rowIndex="5" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+    <Label text="Zip Code:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="zipField" promptText="Enter Zip Code" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    <Label fx:id="zipStatus" GridPane.rowIndex="6" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+    <Button fx:id="addButton" text="Add" disable="true" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    <columnConstraints>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/><RowConstraints/><RowConstraints/><RowConstraints/>
+        <RowConstraints/><RowConstraints/><RowConstraints/><RowConstraints/>
+    </rowConstraints>
 </GridPane>
